@@ -58,5 +58,40 @@ namespace Consolita
             Console.WriteLine("Material: " + material);
             Console.WriteLine("Color: " + color);
         }
+        
+        /// <summary>
+        /// Ejercicio 3
+        /// Operadores - Determina los operadores para verificar las siguientes condiciones:
+        /// Un número es mayor o igual a 18
+        /// Un char es ‘a’
+        /// Se cumplen dos conciones a la vez(ambas verdaderas)
+        /// Se cumple una de dos condiciones a la vez(una true y otra false)
+        /// Nota: puedes escribir estos datos por consola si prefieres verlos.La idea del ejercicio es almacenar los datos en los tipos más adecuados.
+        /// </summary>
+        public static void Ejercicio3()
+        {            
+            Console.Write("Ingrese un número: ");
+            string numeroStr = Console.ReadLine();
+            int numero = Convert.ToInt32(numeroStr);
+            
+            Console.Write("Ingrese un caracter: ");
+            string caracterStr = Console.ReadLine();
+            char caracter = Convert.ToChar(caracterStr);
+
+            bool esMayorOIgualA18 = numero >= 18;
+            Console.WriteLine("¿El número es mayor o igual a 18? " + esMayorOIgualA18);
+
+            bool esLetraA = caracter == 'a';
+            Console.WriteLine("¿El caracter es la letra 'a'? " + esLetraA);
+           
+       
+            bool ambasCondiciones = esMayorOIgualA18 && esLetraA;
+            Console.WriteLine("¿Se cumplen ambas condiciones? " + ambasCondiciones);
+
+       
+            bool unaDeLasCondiciones = esMayorOIgualA18 || esLetraA;
+            Console.WriteLine("¿Se cumple una de las dos condiciones? " + unaDeLasCondiciones);
+
+        }
     }
 }
