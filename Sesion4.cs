@@ -15,6 +15,7 @@ namespace Consolita
         /// </summary>
         public static void Ejercicio1()
         {
+            Console.WriteLine("\n ############# Ejercicio 1 #############");
             Console.WriteLine("Ingrese un numero: ");
             string x = Console.ReadLine();
             int num = Convert.ToInt32(x);
@@ -26,6 +27,43 @@ namespace Consolita
                 Console.WriteLine($"{num} X {i} = {num * i}");
                 i++;
             }
+        }
+
+        /// <summary>
+        /// Ejercicio 2 - Do while
+        /// Escribe un programa que realice estos pasos:
+        /// - Reciba al menos un número por consola
+        /// - Determine si el número es positivo o negativo
+        /// - Presente un contador para cada tipo(positivo y negativo).
+        /// 
+        /// Nota: el cero se puede abordar en una clase adicional ya que no es ni positivo ni negativo.Tienes completa libertad para elegir el formato de la salida.
+        /// </summary>
+        public static void Ejercicio2()
+        {
+            Console.WriteLine("\n ############# Ejercicio 2 #############");
+            int x = 0;
+            char continua = 'Y';
+            int pos = 0;
+            int neg = 0;
+
+            do
+            {
+                Console.WriteLine("Ingrese un numero: ");
+                x = Convert.ToInt32(Console.ReadLine());
+
+                if (x == 0)
+                    Console.WriteLine("No pasa nada loko, esta todo bien");
+                else if (x > 0)
+                    pos++;
+                else
+                    neg++;
+
+                Console.WriteLine("Desea continuar ? Y/N : ");
+                continua = Convert.ToChar(Console.ReadLine());               
+
+            } while (char.ToUpper(continua) == 'Y');
+
+            Console.WriteLine("Se han ingresado :\n\t{0} Positivos\n\t{1} Negativos", pos, neg);
         }
     }
 }
