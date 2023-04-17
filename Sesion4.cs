@@ -65,5 +65,65 @@ namespace Consolita
 
             Console.WriteLine("Se han ingresado :\n\t{0} Positivos\n\t{1} Negativos", pos, neg);
         }
+
+        /// <summary>
+        /// Ejercicio 3 - For
+        /// Escribe un programa que realice estos pasos:
+        /// Reciba 3 datos:
+        /// ancho
+        /// alto
+        /// relleno o no
+        /// Dibuje en consola con un mismo caracter, por ejemplo*, un rectángulo de las dimensiones introducidas y use el tercer dato para discernir si el rectángulo está relleno(tiene más * dentro) o no.
+        /// En caso de recibir el mismo número n dos veces debe dibujar un cuadrado de lado n.
+        /// Reto: Extiende el programa anterior para recibir otro número que sea el número de cuadrados o rectángulos que se deben dibujar en la pantalla.Ejemplos:
+        /// Input: 2,2,2, relleno = true
+        /// Output:
+        /// ** **
+        /// ** **
+        /// Input: 3, 4, 1, relleno = false
+        /// Output:
+        /// ***
+        /// * *
+        /// * *
+        /// ***
+        /// </summary>
+        public static void Ejercicio3()
+        {
+            Console.WriteLine("\n ############# Ejercicio 3 #############");
+            Console.WriteLine("Ingrese el Ancho: ");
+            int width = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Ingrese el Alto: ");
+            int height = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Debe estar relleno ? Y/N : ");
+            char filled = Convert.ToChar(Console.ReadLine());
+
+            bool fill = false;
+
+            if (char.ToUpper(filled) == 'Y')
+                fill = true;
+
+            Console.WriteLine("Cuantas copias desea: ");
+            int cant = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\n***RESULTADO***\n");
+           
+            for ( int i = 0; i < height; i++)
+            {
+                for (int h = 0; h < cant; h++) 
+                {
+                    for (int j = 0; j < width; j++)
+                    {
+                        if (!fill && ((j != 0) && (j != width - 1)))
+                            Console.Write(" ");
+                        else
+                            Console.Write("|");
+                    }
+                    Console.Write("\t");                    
+                }                
+                Console.WriteLine();
+            }
+        }
     }
 }
